@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: { default: 'Next.js Playground', template: '%s | Next.js Playground' },
-  metadataBase: new URL('https://app-router.vercel.app'),
+  title: 'App Directory',
+  metadataBase: 'https://app-directory-main.vercel.app',
   description:
-    'A playground to explore Next.js features such as nested layouts, instant loading states, streaming, and component level data fetching.',
+    'Tools for NextJS sites',
   openGraph: {
-    title: 'Next.js Playground',
+    title: 'App Directory',
     description:
       'A playground to explore Next.js features such as nested layouts, instant loading states, streaming, and component level data fetching.',
-    images: [`/api/og?title=Next.js Playground`],
+    images: [`/api/og?title=App Directory`],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   const demos = db.demo.findMany();
   return (
-    <html lang="en" className="[color-scheme:dark]">
+    <html lang="en" className="scheme-dark">
       <body
         className={`overflow-y-scroll bg-gray-950 font-sans ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -43,7 +43,7 @@ export default function RootLayout({
         </div>
 
         <div className="lg:pl-72">
-          <div className="mx-auto mt-12 mb-24 max-w-4xl -space-y-[1px] lg:px-8 lg:py-8">
+          <div className="mx-auto mt-12 mb-24 max-w-4xl -space-y-px lg:px-8 lg:py-8">
             {children}
 
             <Byline />
